@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.empresa.EmpresaFormEnderecoActivity">
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:orientation="vertical">
+
+            <!--COMPO DE CEP E UF-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- CAMPO DE CEP -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CEP"
+                        android:textColor="@color/blue_dark"/>
+
+                    <com.santalu.maskara.widget.MaskEditText
+                        android:id="@+id/edt_cep"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:inputType="number"
+                        android:padding="16dp"
+                        android:drawablePadding="10dp"
+                        android:hint="CEP"
+                        app:mask="_____-___"
+                        app:maskCharacter="_"
+                        app:maskStyle="completable" />
+
+
+                </LinearLayout>
+
+                <!-- CAMPO DE UF -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="UF"
+                        android:textColor="@color/blue_dark"/>
+                    <EditText
+                        android:id="@+id/edt_uf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:hint="UF"
+                        android:background="@drawable/bg_edt"
+                        android:padding="16dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- CAMPO DE MUNICIPIO-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Endereço"
+                    android:textColor="@color/blue_dark"/>
+                <EditText
+                    android:id="@+id/edt_logradouro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Ex Rua central"
+                    android:background="@drawable/bg_edt"
+                    android:padding="16dp"/>
+            </LinearLayout>
+
+            <!-- CAMPO DE BAIRRO -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bairro"
+                    android:textColor="@color/blue_dark"/>
+                <EditText
+                    android:id="@+id/edt_bairro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="Bairro"
+                    android:background="@drawable/bg_edt"
+                    android:padding="16dp"/>
+            </LinearLayout>
+
+            <!-- Botão-->
+
+            <android.widget.Button
+                android:id="@+id/ib_salvar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_btn"
+                android:onClick="validarDados"
+                android:text="Salvar"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <android.widget.Button
+                android:id="@+id/ib_buscarCep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_btn"
+                android:text="Buscar CEP"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:theme="@style/ProgressBar"/>
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

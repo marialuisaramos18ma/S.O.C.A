@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProjetoAuto"
+        tools:targetApi="31">
+
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Telas de usuario -->
+        <activity
+            android:name=".activity.usuario.UsuarioHomeActivity"
+            android:theme="@style/Theme.ProjetoAuto2" />
+        <activity android:name=".activity.usuario.UsuarioFavoritosActivity" />
+        <activity android:name=".activity.usuario.UsuarioPerfilActivity" />
+        <activity android:name=".activity.usuario.UsuarioDetalheAutomovelActivity" />
+        <activity android:name=".activity.usuario.UsuarioCalendarioActivity" />
+        <activity android:name=".activity.usuario.UsuarioHorariosActivity" />
+
+        <!-- Telas de empresa -->
+        <activity android:name=".activity.empresa.EmpresaHomeActivity" />
+        <activity android:name=".activity.empresa.EmpresaFinalizaCadastroActivity" />
+        <activity android:name=".activity.empresa.EmpresaEnderecosActivity" />
+        <activity android:name=".activity.empresa.EmpresaPerfilActivity" />
+        <activity android:name=".activity.empresa.EmpresaFormEnderecoActivity" />
+        <activity android:name=".activity.empresa.EmpresaFormAutoActivity" />
+        <activity android:name=".activity.empresa.EmpresaSelecionaEnderecoActivity" />
+
+        <!-- Telas de Autenticação -->
+        <activity android:name=".auth.LoginActivity" />
+        <activity android:name=".auth.CriarContaActivity" />
+        <activity android:name=".auth.RecuperaContaActivity" />
+
+        <!-- Telas de MainActivity -->
+        <activity android:name=".activity.FiltrosActivity" />
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.TipoAutomovelActivity" />
+
+        <!-- Provedor do app para acesso a camera -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.projetoauto.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
