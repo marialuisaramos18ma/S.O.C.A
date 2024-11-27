@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculadora de Autonomia"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+    <Spinner
+        android:id="@+id/spinner_aeronaves"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/prompt_selecione_aeronave"/>
+
+    <EditText
+        android:id="@+id/edt_combustivel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantidade de Combustível (litros)"
+        android:inputType="numberDecimal"/>
+
+    <Spinner
+        android:id="@+id/spinner_tipo_combustivel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/tipo_combustivel"/>
+
+    <EditText
+        android:id="@+id/edt_consumo_por_hora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Consumo por Hora (litros)"
+        android:inputType="numberDecimal"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/btn_calcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular Autonomia"/>
+
+    <TextView
+        android:id="@+id/tv_resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_gravity="center"/>
+
+</LinearLayout>
